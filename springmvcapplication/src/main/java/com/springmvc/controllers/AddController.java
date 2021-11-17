@@ -1,4 +1,4 @@
-package com.controllers;
+package com.springmvc.controllers;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.springmvc.services.AddService;
 
 @Controller
 public class AddController {
@@ -15,7 +17,8 @@ public class AddController {
 	{
 		int num1=Integer.parseInt(request.getParameter("t1"));
 		int num2=Integer.parseInt(request.getParameter("t2"));
-		int add=num1+num2;
+		AddService as=new AddService();
+		int add=as.add(num1, num2);
 		//request.setAttribute("addition", add);
 		ModelAndView mv=new ModelAndView();
 		mv.setViewName("display.jsp");
