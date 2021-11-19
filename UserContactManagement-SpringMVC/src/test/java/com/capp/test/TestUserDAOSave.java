@@ -21,7 +21,7 @@ public class TestUserDAOSave {
 		u.setPhone("3646336337");
 		u.setEmail("neha@gmail.com");
 		u.setAddress("Indapur");
-		u.setLoginName("Neha2");
+		u.setLoginName("testdata2");
 		u.setPassword("Neha1234");
 		u.setRole(1);
 		u.setLoginStatus(1);
