@@ -53,21 +53,22 @@ public class UserDAOImpl extends BaseDAO implements UserDAO {
 		
 	}
 
+
 	@Override
 	public void delete(User u) {
-		// TODO Auto-generated method stub
-
+		this.delete(u.getUserid());
+		
 	}
 
 	@Override
 	public void delete(Integer userid) {
-		// TODO Auto-generated method stub
+		String sql="delete from user where userid=?";
+		getJdbcTemplate().update(sql,userid);
 
 	}
 
 	@Override
 	public User findById(Integer userid) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -82,5 +83,6 @@ public class UserDAOImpl extends BaseDAO implements UserDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 }
