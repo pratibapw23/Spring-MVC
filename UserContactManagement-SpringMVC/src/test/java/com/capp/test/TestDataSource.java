@@ -19,7 +19,7 @@ public class TestDataSource {
 		DataSource ds = ctx.getBean(DataSource.class);
 		JdbcTemplate jt = new JdbcTemplate(ds);
 		String sql = "INSERT INTO user(name, phone, email, address, loginName, password)"+ "VALUES(?,?,?,?,?,?)";
-		Object[] param = new Object[] { "pratibha", "5463738463", "prati@gmail.com", "pune", "prati", "password" };
+		Object[] param = new Object[] { "pratibha", "5463738463", "prati@gmail.com", "pune", "testdata1", "password" };
 		jt.update(sql,param);
 		System.out.println("SQL Executed");
 	}
