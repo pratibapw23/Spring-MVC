@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages= {"com.capp.dao"})
+@ComponentScan(basePackages= {"com.capp.dao","com.capp.service"})
 public class SpringRootConfig {
 	
 	@Bean
