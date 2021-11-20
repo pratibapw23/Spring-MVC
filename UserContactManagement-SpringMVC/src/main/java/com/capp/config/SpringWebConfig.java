@@ -16,9 +16,9 @@ import org.springframework.web.servlet.view.JstlView;
 @SuppressWarnings("deprecation")
 public class SpringWebConfig extends WebMvcConfigurerAdapter{
 
-	public void addResourceHandlers(ResourceHandlerRegistry registry)
+	public void addResourceHandler(ResourceHandlerRegistry registry)
 	{
-		
+		registry.addResourceHandler("/images/**").addResourceLocations("/WEB-INF/images/");
 	}
 	@Bean
 	public ViewResolver viewResolver()
