@@ -15,7 +15,7 @@
 /* BASIC */
 
 html {
-  background-color: #FDEBD0;
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
 
 body {
@@ -41,6 +41,9 @@ h2 {
 }
 .error{
 color: #F6271A;
+}
+.success{
+color: #09C959;
 }
 
 
@@ -122,7 +125,7 @@ input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
   background-color: #39ace7;
 }
 .button{
-background-color: #008CBA;
+background: linear-gradient(135deg, #71b7e6, #9b59b6);
   border: none;
   color: white;
   padding: 15px 32px;
@@ -306,15 +309,31 @@ input[type=text]:placeholder {
 	<c:if test="${err!=null}">
 		<p class="error">${err}</p>
 	</c:if>
-	<a href="#">Home</a> | <a href="#">Login</a> | <a href="#">Register</a> | <a href="#">About</a>
+	
+	<c:if test="${param.act eq 'lo'}">
+		<p class="success">Logout Successfully!!</p>
+	</c:if>
+	
+	<c:if test="${param.act eq 'reg'}">
+		<p class="success">Registered Successfully!!</p>
+	</c:if>
+	
+	<s:url var="url_logout" value="/logout"/>
+	<s:url var="url_register" value="/reg_form"/>
+	
+	<c:if test="${sessionScope.userid==null}">
+	<a href="#">Home</a> | <a href="#">Login</a> | <a href="${url_register}">Register</a> | <a href="#">About</a>
+	</c:if>
+	
     <!-- Login Form -->
     <s:url var="url_login" value="/login"/>
+    <s:url var="url_register" value="/reg_form"/>
     
     <f:form action="${url_login}" modelAttribute="command">
       <f:input path="loginName" class="fadeIn third" placeholder="loginName"/>
       <f:input path="password" type="password" class="fadeIn third" placeholder="password"/><br>
       <button class="button">Login</button><br>
-      <a href="#">New Registration</a>
+      <a href="${url_register}">New Registration</a>
     </f:form>
 
   </div>
