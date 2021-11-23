@@ -41,12 +41,13 @@
 <body>
 
 <s:url var="url_logout" value="/logout"/>
-
+<s:url var="url_uhome" value="/user/dashboard"/>
+<s:url var="url_cform" value="/user/contact_form"/>
 
 	<c:if test="${sessionScope.userid!=null && sessionScope.role==2}">
 	<div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#news">Add Contact</a>
+  <a class="active" href="${url_uhome}">Home</a>
+  <a href="${url_cform}">Add Contact</a>
   <a href="#contact">Contact List</a>
   <a href="${url_logout}">Logout</a>
 </div>
